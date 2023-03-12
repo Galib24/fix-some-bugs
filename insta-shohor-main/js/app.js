@@ -16,8 +16,15 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
+  // added again click remove emoji
+  if(likedPostsId.includes(id)){
+    likedPostsId.pop();
+    showPosts(posts);
+    
+  }else{
     likedPostsId.push(id); 
     showPosts(posts);
+  }
 };
 
 const reportPost = (id) => {
