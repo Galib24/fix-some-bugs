@@ -156,6 +156,8 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
     const likedPosts = getLikedPosts();
+    // fixed bug for clear previous value
+    document.getElementById( "liked" ).textContent = "";
     likedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "liked" ).appendChild(div);
@@ -164,7 +166,11 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
-    posts.forEach((post) => {
+    //  again fixed to come double report post
+    document.getElementById( "reported" ).textContent = '';
+
+    // fixed problem post change to reportedPosts
+    reportedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "reported" ).appendChild(div);
     });
